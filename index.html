@@ -3,32 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Müjgan QR Menü</title>
-    <link rel="stylesheet" href="styles.css"> <!-- CSS Bağlantısı -->
+    <title>Restoran QR Menü</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Müjgan QR Menü</h1>
-    <p>Lütfen menü kategorilerinden birini seçin:</p>
+    <div class="container">
+        <!-- Sol Sütun: Kategoriler -->
+        <div class="column left">
+            <h2>Kategoriler</h2>
+            <div class="category" data-category="icecekler">İçecekler</div>
+            <div class="category" data-category="tatlilar">Tatlılar</div>
+            <div class="category" data-category="anaYemekler">Ana Yemekler</div>
+            <div class="category" data-category="salatalar">Salatalar</div>
+            <div class="category" data-category="corbalar">Çorbalar</div>
+            <div class="category" data-category="atistirmaliklar">Atıştırmalıklar</div>
+        </div>
 
-    <!-- Menü Kategorisi: İçecekler -->
-    <div class="category">
-        <h2>İçecekler</h2>
-        <div class="menu-items">
-            <div class="menu-item">
-                <p class="menu-title">Çay</p>
-                <p class="menu-price">20,00 TL</p>
-            </div>
-            <div class="menu-item">
-                <p class="menu-title">Kahve</p>
-                <p class="menu-price">50,00 TL</p>
-            </div>
-            <div class="menu-item">
-                <p class="menu-title">Limonata</p>
-                <p class="menu-price">30,00 TL</p>
+        <!-- Orta Sütun: İçerikler -->
+        <div class="column center" id="content-column">
+            <h2>İçerik</h2>
+            <p>Lütfen bir kategori seçin.</p>
+        </div>
+
+        <!-- Sağ Sütun: Resim Gösterim Alanı -->
+        <div class="column right" id="image-column">
+            <h2>Resim Alanı</h2>
+            <div class="image-placeholder">
+                <p>Burada ... resmi olacak</p>
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script> <!-- JavaScript Bağlantısı -->
+    <script src="script.js"></script>
 </body>
 </html>
