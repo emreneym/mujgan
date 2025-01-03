@@ -4,98 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Müjgan QR Menü</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: white;
-            color: black;
-            padding: 20px;
-            text-align: center;
-        }
-        .category {
-            margin: 30px 0;
-        }
-        .category h2 {
-            background-color: #f8f9fa;
-            color: #212529;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .menu-items {
-            display: none;
-            margin-top: 10px;
-            overflow: hidden;
-        }
-        .menu-item {
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #f8f9fa;
-            color: #212529;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .menu-title {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .menu-price {
-            font-size: 18px;
-            color: #007bff;
-        }
-        .slide {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: all 0.4s ease-out;
-        }
-        .slide.open {
-            max-height: 1000px; /* Yeterli bir maksimum yükseklik */
-            opacity: 1;
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const categories = document.querySelectorAll('.category h2');
-            categories.forEach(category => {
-                category.addEventListener('click', () => {
-                    const menuItems = category.nextElementSibling;
-                    if (menuItems.classList.contains('open')) {
-                        menuItems.style.maxHeight = null;
-                    } else {
-                        document.querySelectorAll('.menu-items.open').forEach(openMenu => {
-                            openMenu.classList.remove('open');
-                            openMenu.style.maxHeight = null;
-                        });
-                        menuItems.style.maxHeight = menuItems.scrollHeight + 'px';
-                    }
-                    menuItems.classList.toggle('open');
-                });
-            });
-        });
-    </script>
+    <link rel="stylesheet" href="styles.css"> <!-- CSS Bağlantısı -->
 </head>
 <body>
     <h1>Müjgan QR Menü</h1>
+    <p>Lütfen menü kategorilerinden birini seçin:</p>
 
-    <!-- Çaylar -->
+    <!-- Menü Kategorisi: İçecekler -->
     <div class="category">
-        <h2>Çaylar</h2>
-        <div class="menu-items slide">
+        <h2>İçecekler</h2>
+        <div class="menu-items">
             <div class="menu-item">
                 <p class="menu-title">Çay</p>
                 <p class="menu-price">20,00 TL</p>
             </div>
             <div class="menu-item">
-                <p class="menu-title">Fincan Çay</p>
-                <p class="menu-price">40,00 TL</p>
+                <p class="menu-title">Kahve</p>
+                <p class="menu-price">50,00 TL</p>
             </div>
             <div class="menu-item">
-                <p class="menu-title">Bitki Çayları</p>
-                <p class="menu-price">85,00 TL</p>
+                <p class="menu-title">Limonata</p>
+                <p class="menu-price">30,00 TL</p>
             </div>
         </div>
     </div>
 
+    <script src="script.js"></script> <!-- JavaScript Bağlantısı -->
 </body>
 </html>
