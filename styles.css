@@ -1,1 +1,53 @@
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;  /* Arka plan rengi */
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #007bff;  /* Başlık rengi */
+    font-size: 32px;
+}
+
+.category {
+    margin: 30px 0;
+}
+
+.category h2 {
+    background-color: #007bff;  /* Kategori başlık rengi */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.category h2:hover {
+    background-color: #0056b3;  /* Hover (fare üstüne gelince) */
+}
+
+.menu-items {
+    display: none;  /* Varsayılan olarak menü kapalı */
+    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+    margin: 10px 0;
+}
+
+.menu-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu-price {
+    color: #007bff;
+    font-size: 16px;
+}
