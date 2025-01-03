@@ -25,6 +25,7 @@
         .menu-items {
             display: none;
             margin-top: 10px;
+            overflow: hidden;
         }
         .menu-item {
             margin: 10px 0;
@@ -42,6 +43,9 @@
             font-size: 18px;
             color: #007bff;
         }
+        .slide {
+            transition: max-height 0.4s ease-out;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -49,7 +53,11 @@
             categories.forEach(category => {
                 category.addEventListener('click', () => {
                     const menuItems = category.nextElementSibling;
-                    menuItems.style.display = menuItems.style.display === 'none' ? 'block' : 'none';
+                    if (menuItems.style.maxHeight) {
+                        menuItems.style.maxHeight = null;
+                    } else {
+                        menuItems.style.maxHeight = menuItems.scrollHeight + "px";
+                    }
                 });
             });
         });
@@ -61,7 +69,7 @@
     <!-- Çaylar -->
     <div class="category">
         <h2>Çaylar</h2>
-        <div class="menu-items">
+        <div class="menu-items slide">
             <div class="menu-item">
                 <p class="menu-title">Çay</p>
                 <p class="menu-price">20,00 TL</p>
