@@ -44,7 +44,13 @@
             color: #007bff;
         }
         .slide {
-            transition: max-height 0.4s ease-out;
+            transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+            max-height: 0;
+            opacity: 0;
+        }
+        .slide.open {
+            max-height: 500px; /* Yeterli bir maksimum yükseklik */
+            opacity: 1;
         }
     </style>
     <script>
@@ -53,11 +59,7 @@
             categories.forEach(category => {
                 category.addEventListener('click', () => {
                     const menuItems = category.nextElementSibling;
-                    if (menuItems.style.maxHeight) {
-                        menuItems.style.maxHeight = null;
-                    } else {
-                        menuItems.style.maxHeight = menuItems.scrollHeight + "px";
-                    }
+                    menuItems.classList.toggle('open');
                 });
             });
         });
